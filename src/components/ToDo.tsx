@@ -10,11 +10,13 @@ function ToDo({ text, category, id }: IToDo) {
     setToDos(oldToDos => {
       const targertIndex = oldToDos.findIndex(toDo => toDo.id === id);
       const newToDo = { text, id, category: name as any };
-      return [
+      const newToDos = [
         ...oldToDos.slice(0, targertIndex),
         newToDo,
         ...oldToDos.slice(targertIndex + 1),
       ];
+      localStorage.setItem("toDos", JSON.stringify(newToDos));
+      return newToDos;
     });
   };
   return (
