@@ -31,7 +31,6 @@ function ToDoList() {
     });
     setValue("category", "");
   };
-  console.log(category, categories);
   const onInput = (event: React.FormEvent<HTMLSelectElement>) => {
     const {
       currentTarget: { value },
